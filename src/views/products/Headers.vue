@@ -1,9 +1,9 @@
 <!-- eslint-disable no-undef -->
 <template>
-  <!-- Drawer for small screens -->
-  
-  <v-navigation-drawer class="custom-drawer" v-model="drawer" app  temporary  :class="[
-      displayClasses, // 'app-drawer--mobile'
+ 
+
+  <v-navigation-drawer class="custom-drawer" v-model="drawer" app    :class="[
+      displayClasses, 
     ]">
     
     <v-list>
@@ -14,8 +14,8 @@
       </v-list-item-group>
     </v-list>
   </v-navigation-drawer>
-
-  <!-- App bar with tabs for larger screens -->
+<!--    
+  
   <v-app-bar app class="custom-app-bar" color="transparent" elevation="0">
     <v-app-bar-nav-icon @click="drawer = true" class="d-sm-none"></v-app-bar-nav-icon>
 
@@ -29,10 +29,38 @@
       </v-tabs>
         
     </div>
- <v-btn density="compact" icon="mdi-comments" variant="outlined" color="white" class="custom-title d-sm-flex d-none"></v-btn>
+    <v-spacer></v-spacer>
+ <v-btn density="compact" icon="mdi-comments" variant="outlined" color="white" class="custom-title  d-sm-flex d-none"></v-btn>
     
+  </v-app-bar>-->
+
+  <v-app-bar app color="transparent" flat>
+    
+    <v-toolbar-title class="custom-title ml-15">antic</v-toolbar-title>
+    <v-tabs v-model="tab" class="custom-tabs d-none d-sm-flex  mt-1 ">
+  <v-tab v-for="(item, index) in items" :key="index" @click="selectTab(index)">
+    {{ item }}
+  </v-tab>
+</v-tabs>
+
+    <v-spacer></v-spacer>
+    
+   
+ <v-app-bar-nav-icon @click="drawer = true" class="d-sm-none " color="white"></v-app-bar-nav-icon>
+
+        
+
+    <v-spacer></v-spacer>
+    
+    <v-avatar size="30" class="ml-2 d-sm-flex d-none">
+      <v-img src="@/assets/Union.png" color="black"></v-img>
+    </v-avatar>
+    <v-btn icon dark class="">
+      <v-icon x-small color="#878A94">fas fa-chevron-down</v-icon>
+    </v-btn>
   </v-app-bar>
-</template>
+
+</template> 
 
 <script>
 
@@ -57,59 +85,55 @@ export default {
 };
 
 </script>
-
 <style scoped>
-.custom-app-bar {
-  padding-left: 150px;
-  padding-right: 16px;
-  padding-top: 16px;
-  background-color: transparent;
-  box-shadow: none;
-}
-
-.custom-title {
-  margin-right: 16px;
-  color: #A06056;
-  font-size: 24px;
-  font-family: Merriweather;
-  font-weight: 700;
-  line-height: 25px;
-  letter-spacing: 2px;
-  word-wrap: break-word;
-}
-
-.custom-tabs {
-  color: #706458;
-  font-size: 14px;
-  font-family: Varta;
-  font-weight: 400;
-  line-height: 25px;
-  word-wrap: break-word;
-  margin-left: 16px;
-}
-
-@media only screen and (max-width: 768px) {
-
+/* Larger Screens */
+@media only screen and (min-width: 768px) {
+  .custom-app-bar {
+    padding: 5vh 10vh 10vh 5%;
+    background-color: transparent;
+    box-shadow: none;
+  }
 
   .custom-title {
-   
-font-family: Merriweather;
-font-size: 34px;
-font-weight: 700;
-line-height: 25px;
-letter-spacing: 2px;
-text-align: left;
-color: rgba(255, 255, 255, 1);
+    color: #A06056;
+    font-size: 30px;
+    font-family: Merriweather;
+    font-weight: 700;
+    line-height: 25px;
+    letter-spacing: 2px;
+    word-wrap: break-word;
+    
+  }
 
+  .custom-tabs {
+    color: #706458;
+    font-size: 18px;
+    font-family: Varta;
+    font-weight: 400;
+    word-wrap: break-word;
+    
+  }
 }
- .custom-drawer{
-  width: 321px;
-height: 45px;
-top: 41px;
-left: 22px;
-justify-content: space-between;
 
- }
+/* Smaller Screens */
+@media only screen and (max-width: 768px) {  
+  .custom-title {
+    font-family: Merriweather;
+    font-size: 24px; /* Adjust as needed */
+    font-weight: 700;
+    line-height: 25px;
+    letter-spacing: 2px;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+  }
+
+  .custom-drawer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .custom-tabs {
+    display: none; /* Optionally hide tabs for small screens */
+  }
 }
-
 </style>

@@ -1,19 +1,21 @@
 <template>
- 
-  <div  class=" hero">
+ <div >
+  <v-container fluid class=" hero">
+
+
     <!-- Main content -->
 <v-col cols="12" md="12" xs="12" sm="12" >
-    <div >
+    <div class="card">
       <!-- Colored background div -->
-      <div >
+      <div class="custumetitle">
         <v-card-title >
-          <h2 class="title1 top size">HOME DESIGN</h2>
+          <h2 class="title1  ">HOME DESIGN</h2>
         </v-card-title>
         <v-card-title >
-          <h3 class="title2 size">Elegance for <br> Interiors & <br> Exteriors</h3>
+          <h3 class="title2 ">Elegance for <br> Interiors & <br> Exteriors</h3>
         </v-card-title>
         <v-card-text >
-          <h1 class="title3 size">We provide everyone with modern, trendy, quality furniture</h1>
+          <h1 class="title3 ">We provide everyone with modern, trendy, quality furniture</h1>
         </v-card-text>
 
         <v-col >
@@ -21,8 +23,8 @@
         </v-col>
       </div>
     </div></v-col>
-  </div>
-
+  </v-container>
+</div>
 </template>
 
 <script>
@@ -33,41 +35,31 @@ export default {
 
 <style scoped>
 .hero {
-  background: url('@/assets/Picture.jpg') no-repeat right;
-  background-size: 650px 150%;
-  height: auto;
+  
+   background: url('@/assets/Picture.jpg') no-repeat right;
+  background-size: 50% 150%;
   background-color: rgba(243, 238, 232, 1);
-  padding-bottom: 20px;
+
 }
 
 @media only screen and (max-width: 768px) {
   .hero {
     background: url('@/assets/Picture.jpg') no-repeat center center;
-    background-size: cover;
-    
-    padding: 25px;
-
-
+    background-size: cover; 
+    padding: 0px 25px 0px 25px; 
   }
-
+.card{
+  padding: 160px 0px 90px 0px; 
+  gap: 24;
+  display: flex;
+  flex-direction: column;
+}
   .button {
     color: #ffffff;
    margin-left: 100px;
    margin-bottom: 100px;
-
   }
-
-  .top {
-    margin-top: 80px;
-  }
-
-  .size {
-    margin-bottom: 25px;
-    padding: 25px 25px 25px 0px;
-  }
-
   h2.title1 {
-    
     height: 20px;
     font-family: Varta;
     font-size: 14px;
@@ -76,11 +68,8 @@ export default {
     letter-spacing: 1px;
     text-align: center;
     color: rgba(255, 255, 255, 1);
-
   }
-
   h3.title2 {
-   
     height: 120px;
     font-family: Merriweather;
     font-size: 35px;
@@ -104,25 +93,20 @@ export default {
   }
 }
 
-
-
 @media only screen and (min-width: 768px) {
+ .hero{
+  padding: 0px 0px 0px 150px; 
+ }
 
-
-  .top {
-    margin-top: 22vh;
-  }
-
-  .size {
-    margin-left: 120px;
-  }
+ .card{
+  padding: 150px 0px 0px 0px; 
+ }
 
   h2.title1 {
     width: 420px;
     height: 20px;
     font-size: 15px;
     margin-bottom: 20px;
-
     color: #A06056;
     font-family: Varta;
     font-weight: 700;
@@ -154,7 +138,6 @@ export default {
     line-height: 31px;
     letter-spacing: 0px;
     text-align: left;
-
   }
 
   .button {

@@ -11,10 +11,10 @@ import 'vuetify/dist/vuetify.css';
 // main.js
 import 'typeface-varta'
 import 'typeface-merriweather'
-
+import 'typeface-karla'
 // import swiper module styles
 import 'swiper/css'
-/* main.css */
+
 
 
 

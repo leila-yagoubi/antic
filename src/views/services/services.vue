@@ -1,7 +1,8 @@
 <template>
   <div class="services">
+    <v-container fluid>
       <v-col cols="12" md="12" xs="12" sm="12">
-  <v-container >
+  
     <v-row>
     
       <!-- Left column -->
@@ -50,17 +51,19 @@
       
     </v-row>
 
-  </v-container>
-</v-col>
+  
+</v-col></v-container>
 </div>
 </template>
 
 <style scoped>
 .services {
   width: 100%;
-  height: auto ;
+  height: auto;
   background: #F3EEE8;
+   /* top right bottom left */
 }
+
 
 .cards {
   background-color: #F3EEE8;
@@ -70,6 +73,7 @@
 }
 
 @media only screen and (max-width: 768px){
+
   .text {
   color: var(--Brown-Light, rgba(112, 100, 88, 0.90));
   font-family: Varta;
@@ -99,7 +103,7 @@ font-weight: 900;
 line-height: 25px;
 letter-spacing: 0.30000001192092896px;
 text-align: left;
-margin-left: 18px;
+
 
 }
 
@@ -117,15 +121,14 @@ letter-spacing: -0.20000000298023224px;
 text-align: left;
 
 }
+
 }
 
 
 @media screen and (min-width: 768px) {
-  .services{
-    padding-left: 50px;
- padding-top: 50px;
-  }
- 
+ .services{
+  padding: 0px 150px 0px 150px;
+ }
 h3.title {
   height: auto; /* Change height to auto for responsiveness */
   width: 188px; /* Make title fill the container */

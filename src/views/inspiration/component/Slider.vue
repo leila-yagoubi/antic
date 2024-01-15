@@ -1,26 +1,27 @@
 <template>
   <div class="sliders">
+    <v-container >
     <v-row >
       <v-col>
         <v-row v-if="!isMobile">
-          <swiper ref="swiperRef" :slides-per-view="3" :space-between="30" 
-            :navigation="navigation" :modules="modules" class="mySwiper">
+          <swiper ref="swiperRef" :slides-per-view="2" :space-between="30" 
+          
+            :navigation="navigation" :modules="modules" class="mySwiper" >
             <swiper-slide v-for="(slide, index) in slides" :key="index">
               <div>
                 <img :src="slide.img" alt="Slide Image">
               </div>
             </swiper-slide>
           </swiper>
-        
 
-        <v-col cols="12" md="12" sm="12" xs="12">
+        <v-col >
   <v-row >
       <!-- Left column -->
-      <v-col md="3" >      
+      <v-col md="4" >      
           <h3 class="title">Inspirations</h3>     
          
       </v-col>
-      <v-col md="5" >      
+      <v-col md="6" >      
             
           <p class="description ">Our experts are keen to stay on top of trends in order to offer you new inspirations for your interior and exterior every day. Remember that to inspire you we have to inspire ourselves and we want to share that with you.</p>      
       </v-col>
@@ -56,7 +57,7 @@
 
         <v-row v-else>
           <!-- Layout for mobile devices -->
-          <v-col md="12">
+          <v-col md="12 " class="inspo">
             <h3 class="title2">Inspirations</h3>
             <p class="description2">Our experts are keen to stay on top of trends in order to offer <br> you new inspirations for your interior and exterior every day. Remember that to inspire you we have to inspire ourselves and we want to share that with you.</p>
           </v-col>
@@ -65,31 +66,34 @@
     </v-row>
 
     <v-row v-if="isMobile">
-      <v-col class="d-flex justify-center">
-        <v-row >
-            <v-col
-              v-for="(slide, index) in slides.slice(0, 2)"
-              :key="index"
-              class="custom-grid-item"
-            >
-              <img :src="slide.img" alt="Grid Image" height="200" width="150"> 
-              <h3 >Inspirations</h3>
-            </v-col>
-          
-         
-            <v-col
-              v-for="(slide, index) in slides.slice(2, 4)"
-              :key="index"
-              class="custom-grid-item"
-            >
-              <img :src="slide.img" alt="Grid Image" height="200" width="150">
-              <h3 class="title2">Inspirations</h3>
-            </v-col>
-          </v-row>
+    <v-col class="d-flex flex-column justify-center">
+      <!-- First Row -->
+      <v-row>
+        <v-col
+          v-for="(slide, index) in slides.slice(0, 2)"
+          :key="index"
+          class="custom-grid-item"
+        >
+          <img :src="slide.img" alt="Grid Image" height="200" width="150">
+          <h3>Inspirations</h3>
         </v-col>
-      
-     
-    </v-row>
+      </v-row>
+
+      <!-- Second Row -->
+      <v-row>
+        <v-col
+          v-for="(slide, index) in slides.slice(2, 4)"
+          :key="index"
+          class="custom-grid-item"
+        >
+          <img :src="slide.img" alt="Grid Image" height="200" width="150">
+          <h3>Inspirations</h3>
+        </v-col>
+      </v-row>
+    </v-col>
+  </v-row>
+</v-container>
+
   </div>
 </template>
 
@@ -159,21 +163,15 @@ export default {
 </script>
 
 <style scoped>
-.sliders {
-  width: 100%;
-  height: auto;
-  margin-bottom: 20px;
-  
-}
+
 
 
 @media only screen and (min-width: 768px){
-  .sliders { 
-  
-  padding-left: 60px;
+.sliders{
+  padding: 0px 0px 0px 30px; 
 }
+ 
 .swiper-pagination {
-position: absolute;
   right: 0;
   bottom: 20px;
 }
@@ -184,22 +182,23 @@ position: absolute;
 .swiper {
   width: 100%;
   height: 100%;
-
+  
+  overflow: visible;
 }
 
 .swiper-slide {
   text-align: end;
   font-size: 18px;
   background: #fff;
-
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .swiper-slide img {
-  display: block;
+  
   width: 100%;
-  height: 550px;
+  height: 90vh;
   object-fit: cover;
 }
 h3.title{
@@ -221,12 +220,34 @@ font-weight: 400;
 line-height: 25px;
 text-align: left;
 width: 400px;
-margin-left: 80px;
+
 color: rgba(112, 100, 88, 1);
 }
 }
 @media only screen and (max-width: 768px){
+  h3.title2{
+
+color: rgba(83, 75, 66, 1);
+font-family: Merriweather;
+font-size: 35px;
+font-weight: 400;
+line-height: 40px;
+letter-spacing: -0.30000001192092896px;
+text-align: left;
 
 }
+p.description2{
+  font-family: varta;
+font-size: 18px;
+font-weight: 400;
+line-height: 25px;
+letter-spacing: 0px;
+text-align: left;
+padding-top: 20px;
+color: rgba(112, 100, 88, 1);
+}
+
+}
+
 
 </style>

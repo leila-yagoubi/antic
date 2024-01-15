@@ -1,5 +1,5 @@
 <template>
-  <v-container >
+  <v-container fluid >
     <v-row  v-if="!isMobile">
       <v-col cols="12" md="12" >
         
@@ -11,10 +11,10 @@
                   </div>
                 </v-col >
                 <v-col md="10"  >
-                  <swiper ref="swiperRef" :slides-per-view="2" :space-between="30" :navigation="navigation" :modules="modules" class="mySwiper">
+                  <swiper ref="swiperRef" :slides-per-view="2" :space-between="40" :navigation="navigation" :modules="modules" class="mySwiper">
                    <swiper-slide v-for="(slide, index) in slides" :key="index">               
                     
-              <v-img class="img"  height="330"  :src="slide.img">
+              <v-img class="img"  height="300"  :src="slide.img">
                  <div class="overlay">
                   <h2 class="title five">{{ slide.title }}</h2>
                   <p class="arrival">{{ slide.description }}</p>
@@ -33,7 +33,7 @@
           <v-col  >
       <v-btn
         :disabled="currentPage === totalSlides - 1"
-        variant="plain"
+        variant="text"
         class="swiper-button-next"
       >
         {{ (currentPage + 1).toString().padStart(2, '0') }} /
@@ -43,7 +43,7 @@
           <v-col class="mr-15" md="8">
             <v-btn
             append-icon="mdi-chevron-right"
-            variant="plain"
+            variant="text"
             class="swiper-button-next  "
             @click="nextSlide"
           >
@@ -54,28 +54,29 @@
        
       </v-col>
     </v-row>
-
-
-    <v-row   v-if="isMobile">
-       <div>
-      <p class="description">Dining room, bedroom, bathroom or office. Find what you need</p>
-    </div>
-  <v-col cols="12" class=" d-block  " width="100% " height="100%"   color="rgba(243, 238, 232, 1)" elevation="0">
-   
-    <swiper ref="swiperRef" :slides-per-view="1" :space-between="10" :navigation="navigation" :modules="modules" class="mySwiper">
-      <swiper-slide v-for="(slide, index) in slides" :key="index"> 
-                                   
-        <v-img height="200" :src="slide.img">
-          <div class="overlay">
-            <h2 class="title five">{{ slide.title }}</h2>
-            <p class="arrival">{{ slide.description }}</p>
-          </div>
-        </v-img> 
+    <div  v-if="isMobile" class="d-flex ">
+    <v-card   justify-start color="rgba(243, 238, 232, 1)" elevation="0">             
+                  <div>
+                    <p class="description">Dining room, bedroom, bathroom or office. Find what you need</p>
+                  </div>           
+                 <swiper ref="swiperRef" :slides-per-view="1" space-between="30" :navigation="navigation" :modules="modules" class="mySwiper">
+                   <swiper-slide v-for="(slide, index) in slides" :key="index">               
+                  
+              <v-img height="10" :src="slide.img">
+                
+                 <div class="overlay">
+                  <h2 class="title five">{{ slide.title }}</h2>
+                  <p class="arrival">{{ slide.description }}</p>
+                 
+                </div>
+              </v-img>           
+            </swiper-slide>
+          </swiper>
+      
        
-      </swiper-slide>
-    </swiper>
-  </v-col>
-</v-row>
+          </v-card>   
+</div>
+
 
 
       
@@ -159,7 +160,7 @@ export default {
 
 .title {
   font-family: Merriweather;
-  font-size: 45px;
+  font-size: 40px;
   font-weight: 400;
   line-height: 60px;
   letter-spacing: -0.6000000238418579px;
@@ -172,10 +173,8 @@ export default {
   white-space: normal;
   font-family: Varta;
   font-weight: 400;
-  line-height: 25px;
   text-align: right;
   color: rgba(112, 100, 88, 0.9);
-  
 }
 .description {
   font-size: 18px;
@@ -184,7 +183,6 @@ export default {
   line-height: 25px;
   text-align: left;
   color: rgba(112, 100, 88, 0.9);
-  margin-left: 60px;
   width: 150px;
 }
 
@@ -207,8 +205,6 @@ margin-right: 20px;
   .description {
     width: 280px;
 height: 40px;
-margin-left: 35px;
-padding: 5px;
 margin-bottom: 20px;
 font-family: Varta;
 font-size: 18px;
@@ -216,8 +212,8 @@ font-weight: 400;
 line-height: 25px;
 letter-spacing: 0px;
 text-align: left;
-
 }
+
 
 .five {
   position: absolute;
@@ -229,7 +225,7 @@ text-align: left;
 }
 .title {
   font-family: Merriweather;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 400;
   line-height: 60px;
   letter-spacing: -0.6000000238418579px;
@@ -245,7 +241,12 @@ text-align: left;
   line-height: 25px;
   text-align: right;
   color: rgba(112, 100, 88, 0.9);
-  padding-left: 50px;
+  
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 }

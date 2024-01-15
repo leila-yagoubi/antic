@@ -1,13 +1,12 @@
 <template>
-    <div class="inspiration">
-
     
-    <v-container >
+
+    <div class="inspiration">
+    <v-container   fluid>
     <newsletter/>
     <Slider/>
-
     </v-container>
-    </div>
+  </div>
 </template>
 
 <script>
@@ -22,10 +21,15 @@ export default{
 </script>
 
 <style>
-.inspiration{
-    position: relative;
-    background-color:rgba(255, 255, 255, 1);
 
-   
+@media only screen and (min-width: 768px){
+    .inspiration{
+        padding: 70px 150px 64px 150px;
+    }
+}
+@media only screen and (max-width: 768px){}
+.inspiration{
+  
+    background-color:rgba(255, 255, 255, 1);
 }
 </style>

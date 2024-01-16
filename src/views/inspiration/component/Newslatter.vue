@@ -3,9 +3,9 @@
         
             <v-row>
                 <v-col>
-                    <v-card-title>
-                        <h2 class="title1 ">Be aware of the latest trends</h2>
-                    </v-card-title>
+                    <v-card-text>
+                        <h1 class="title1 ">Be aware of the latest trends</h1>
+                    </v-card-text>
                     <v-card-text>
                         <p class="title2 ">Stay informed of new trends, but also of our various offers.</p>
                         <v-btn append-icon="mdi-chevron-right" variant="plain" class="title3 left">
@@ -61,17 +61,19 @@ export default {
 
 
 @media only screen and (max-width: 768px) {
-    .title1 {
+     h1.title1 {
         font-family: Merriweather;
-        font-size: 35px;
+        font-size: 30px;
         font-weight: 300;
         line-height: 40px;
-        width: 200px;
         height: 80px;
+        width: 150;
+        text-align: center;
         color: rgba(18, 18, 18, 1);
     }
+    
 
-    .title2 {
+   .title2 {
         font-family: Varta;
         font-size: 18px;
         font-weight: 400;

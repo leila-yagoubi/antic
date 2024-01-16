@@ -9,55 +9,27 @@
     </v-list>
   </v-navigation-drawer>
 
-  <v-app-bar dense app color="transparent" flat>
-      <v-container>
-        <v-row align="left">
-         
+  <v-app-bar app color="transparent" flat>
+    <v-container>
+      <v-row align="center">
+        <v-tab class="custom-title" :disabled="isDisabled" >antic</v-tab>
+        <v-tabs v-model="tab" class="custom-tabs d-none d-sm-flex" align-tabs="center">
           
-          
-          
-            <v-tabs left align-tabs="start" v-model="tab" class="custom-tabs d-none d-sm-flex">
-              <v-tab class="custom-title" >antic</v-tab>
-        <v-tab v-for="(item, index) in items" :key="index" @click="selectTab(index)">
-          {{ item }}
-        </v-tab>
-      </v-tabs>
-        
-          <v-spacer />
-          <div>
-            <v-btn icon dark class="ml-2 d-sm-flex d-none">
-      <v-avatar size="30">
-        <v-img src="@/assets/Union.png" color="black"></v-img>
-      </v-avatar>
-    </v-btn>
-          </div>
-        </v-row>
-      </v-container>
-    </v-app-bar>
+          <v-tab v-for="(item, index) in items" :key="index" @click="selectTab(index)">
+            {{ item }}
+          </v-tab>
+        </v-tabs>
 
+        <v-spacer />
 
-  <!-- <v-app-bar dense app color="transparent" flat>
-    <v-app-bar-title class="custom-title">
-      antic
-      
-    </v-app-bar-title><v-tabs v-model="tab" class="custom-tabs d-none d-sm-flex">
-        <v-tab v-for="(item, index) in items" :key="index" @click="selectTab(index)">
-          {{ item }}
-        </v-tab>
-      </v-tabs>
-
-    <v-spacer></v-spacer>
-
-    <v-app-bar-nav-icon @click="drawer = !drawer" class="d-sm-none" color="white"></v-app-bar-nav-icon>
-
-    <v-spacer></v-spacer>
-
-    <v-btn icon dark class="ml-2 d-sm-flex d-none">
-      <v-avatar size="30">
-        <v-img src="@/assets/Union.png" color="black"></v-img>
-      </v-avatar>
-    </v-btn>
-  </v-app-bar> -->
+        <v-btn icon dark class="ml-2 d-sm-flex d-none">
+          <v-avatar size="30">
+            <v-img src="@/assets/Union.png" color="black"></v-img>
+          </v-avatar>
+        </v-btn>
+      </v-row>
+    </v-container>
+  </v-app-bar>
 </template>
 
 <script>
@@ -87,15 +59,13 @@ export default {
   }
 
   .custom-title {
-    display: flex;
-    align-items: center;
     color: #A06056;
     font-size: 30px;
     font-family: Merriweather;
     font-weight: 700;
     line-height: 25px;
     letter-spacing: 2px;
-  
+    text-transform: none !important;
   }
 
   .custom-tabs {
@@ -103,6 +73,7 @@ export default {
     font-size: 18px;
     font-family: Varta;
     font-weight: 400;
+    text-transform: none !important;
   }
 }
 

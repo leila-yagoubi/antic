@@ -45,13 +45,13 @@
 
     <!-- Pagination and navigation buttons -->
     <v-row :class="{ 'flex-row': isMobile, 'flex-row': !isMobile }">
-      <v-col>
+      <v-col cols="2">
         <v-btn :disabled="currentPage === totalSlides - 1" variant="text" class="swiper-button-next">
           {{ (currentPage + 1).toString().padStart(2, '0') }} / {{ totalSlides.toString().padStart(2, '0') }}
         </v-btn>
       </v-col>
-      <v-col  >
-        <v-btn append-icon="mdi-chevron-right" variant="text" class="swiper-button-next" @click="nextSlide">
+      <v-col cols="2" >
+        <v-btn append-icon="mdi-chevron-right" variant="text" class="swiper-button-next ml-10" @click="nextSlide">
           next
         </v-btn>
       </v-col>

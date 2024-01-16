@@ -2,7 +2,6 @@
  <div >
   <v-container fluid class=" hero">
 
-
     <!-- Main content -->
 <v-col cols="12" md="12" xs="12" sm="12" >
     <div class="card">
@@ -49,7 +48,7 @@ export default {
     padding: 0px 25px 0px 25px; 
   }
 .card{
-  padding: 160px 0px 90px 20px; 
+  padding: 0px 0px 0px 0px; 
   gap: 24;
   display: flex;
   flex-direction: column;

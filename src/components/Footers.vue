@@ -95,7 +95,7 @@ export default {}
   background-color: rgba(243, 238, 232, 1);
   position: relative;
   width: 100%;
-  padding: 70px 150px 64px 150px;
+  padding: 70px 150px 64px 50px;
 }
 
 .footer-content {

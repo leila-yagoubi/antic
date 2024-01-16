@@ -2,10 +2,9 @@
     <div class="room">
       <v-container fluid>
       <v-card-title >
-            <h2 class="title ">Find your room</h2>
+        <h2 class="title ">Find your room</h2>
       </v-card-title>
-    <Slide/>
-   
+    <Slide/>  
     </v-container>
     </div>
 </template>
@@ -29,7 +28,7 @@ components:{
 }
 @media only screen and (min-width: 768px) {
   .room{
-    padding: 0px 50px 0px 150px; 
+    padding: 0px 50px 0px 50px; 
   }
 .title{
   font-family: Merriweather;

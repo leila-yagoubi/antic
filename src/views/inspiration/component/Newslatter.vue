@@ -1,6 +1,6 @@
 <template>
     <div class="newsletter">
-        <v-container fluid>
+        
             <v-row>
                 <v-col>
                     <v-card-title>
@@ -27,7 +27,7 @@
                     </div>
                 </v-col>
             </v-row>
-        </v-container>
+   
     </div>
 </template>
   
@@ -149,7 +149,6 @@ export default {
         font-family: Karla;
         font-size: 17px;
         font-weight: 700;
-        line-height: 25px;
         letter-spacing: 0.3px;
         text-align: left;
 

@@ -49,7 +49,7 @@ export default {
     padding: 0px 25px 0px 25px; 
   }
 .card{
-  padding: 160px 0px 90px 0px; 
+  padding: 160px 0px 90px 20px; 
   gap: 24;
   display: flex;
   flex-direction: column;
@@ -95,12 +95,9 @@ export default {
 
 @media only screen and (min-width: 768px) {
  .hero{
-  padding: 0px 0px 0px 150px; 
+  padding: 10% 0% 10% 50px; 
  }
 
- .card{
-  padding: 150px 0px 0px 0px; 
- }
 
   h2.title1 {
     width: 420px;

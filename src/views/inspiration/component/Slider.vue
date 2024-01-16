@@ -1,10 +1,10 @@
 <template>
   <div class="sliders">
-    <v-container >
+    <v-container fluid>
     <v-row >
       <v-col>
         <v-row v-if="!isMobile">
-          <swiper ref="swiperRef" :slides-per-view="2" :space-between="30" 
+          <swiper ref="swiperRef" :slides-per-view="3" :space-between="30" 
           
             :navigation="navigation" :modules="modules" class="mySwiper" >
             <swiper-slide v-for="(slide, index) in slides" :key="index">
@@ -17,11 +17,11 @@
         <v-col >
   <v-row >
       <!-- Left column -->
-      <v-col md="4" >      
+      <v-col md="3" >      
           <h3 class="title">Inspirations</h3>     
          
       </v-col>
-      <v-col md="6" >      
+      <v-col md="5" >      
             
           <p class="description ">Our experts are keen to stay on top of trends in order to offer you new inspirations for your interior and exterior every day. Remember that to inspire you we have to inspire ourselves and we want to share that with you.</p>      
       </v-col>
@@ -32,10 +32,10 @@
           <v-col class="d-flex justify-center">
             
               <v-col cols="auto">
-        <v-btn class="swiper-button-prev pt-1 " density="compact" icon="mdi-chevron-left pb-1 "  variant="outlined" color="rgba(160, 96, 86, 1)"  @click="prevSlide" ></v-btn>
+        <v-btn class="swiper-button-prev  " density="compact" icon="mdi-chevron-left "  variant="outlined" color="rgba(160, 96, 86, 1)"  @click="prevSlide" ></v-btn>
       </v-col>
       <v-col cols="auto">
-      <v-btn class="swiper-button-next pt-1" density="compact" icon="mdi-chevron-right pb-1 "  variant="outlined" color="rgba(160, 96, 86, 1)"  @click="nextSlide" ></v-btn>
+      <v-btn class="swiper-button-next " density="compact" icon="mdi-chevron-right  "  variant="outlined" color="rgba(160, 96, 86, 1)"  @click="nextSlide" ></v-btn>
       </v-col>
 
           </v-col>
@@ -167,10 +167,25 @@ export default {
 
 
 @media only screen and (min-width: 768px){
-.sliders{
-  padding: 0px 0px 0px 30px; 
-}
- 
+
+  .swiper-button-next{
+  color: rgba(160, 96, 86, 1);
+  font-family: Karla;
+ font-size: 20px;
+ font-weight: 700;
+
+ letter-spacing: 0.30000001192092896px;
+ }
+
+ .swiper-button-prev{
+  color: rgba(160, 96, 86, 1);
+  font-family: Karla;
+ font-size: 20px;
+ font-weight: 700;
+
+ letter-spacing: 0.30000001192092896px;
+ }
+
 .swiper-pagination {
   right: 0;
   bottom: 20px;
@@ -181,25 +196,23 @@ export default {
 
 .swiper {
   width: 100%;
-  height: 100%;
+  height: 100%; 
   
-  overflow: visible;
 }
 
 .swiper-slide {
   text-align: end;
   font-size: 18px;
   background: #fff;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  justify-content: left;
+  align-items: left;
+  overflow: visible;
 }
 
 .swiper-slide img {
   
   width: 100%;
-  height: 90vh;
-  object-fit: cover;
+  height: 80vh;
 }
 h3.title{
 font-family: Merriweather;
@@ -219,7 +232,7 @@ font-size: 18px;
 font-weight: 400;
 line-height: 25px;
 text-align: left;
-width: 400px;
+width: 420px;
 
 color: rgba(112, 100, 88, 1);
 }

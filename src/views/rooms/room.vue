@@ -1,11 +1,12 @@
 <template>
     <div class="room">
-      <v-container fluid>
-      <v-card-title >
+      <v-container>
+      
         <h2 class="title ">Find your room</h2>
-      </v-card-title>
-    <Slide/>  
-    </v-container>
+      
+       <Slide/> 
+      </v-container>
+     
     </div>
 </template>
 
@@ -23,23 +24,20 @@ components:{
 </style>
 <style scoped>
 .room{
-  
   background:rgba(243, 238, 232, 1);
 }
 @media only screen and (min-width: 768px) {
   .room{
-    padding: 0px 50px 0px 50px; 
+    padding: 4% 6% 3% 6%; 
   }
 .title{
+
   font-family: Merriweather;
-font-size: 55px;
+font-size: 4vw;
+line-height: 15vh; 
 font-weight: 300;
-line-height: 60px;
-letter-spacing: -0.6000000238418579px;
 text-align: left;
-color: rgba(112, 100, 88, 1);
-
-
+color: rgb(88, 112, 106);
 }}
 
 @media only screen and (max-width: 768px) {

@@ -1,38 +1,35 @@
 <template>
-  <v-container class="slideRoom">
+
+  <div  >
     <!-- Desktop view -->
     <v-row v-if="!isMobile">
+      
       <v-card class="mx-auto d-flex" width="100% " height="100%" color="rgba(243, 238, 232, 1)" elevation="0">
-    <v-col cols="1">
-      
-      <p class="description">Dining room, bedroom, bathroom or office. Find what you need</p>
-      
+    <v-col cols="2" md="2">      
+      <p class="description">Dining room, bedroom, bathroom or office. Find what you need</p>     
     </v-col>
     <v-col cols="10">
-      <swiper ref="swiperRef" :slides-per-view="2" :space-between="40" :navigation="navigation" :modules="modules" class="mySwiper">
-                 <swiper-slide v-for="(slide, index) in slides" :key="index">               
-                  
-            <v-img   height="300"  :src="slide.img">
-               <div class="overlay">
-                <h2 class="title five">{{ slide.title }}</h2>
-                <p class="arrival">{{ slide.description }}</p>
-              </div>
-            </v-img>
-           
-          </swiper-slide>
-        </swiper>
-    </v-col>
+  <swiper ref="swiperRef" :slides-per-view="2" :space-between="40" :navigation="navigation" :modules="modules" class="mySwiper">
+    <swiper-slide v-for="(slide, index) in slides" :key="index">
+      <div>        
+        <img height="300" class="images" :src="slide.img" :contain="true">
+          <div class="overlay">
+            <h2 class="title five">{{ slide.title }}</h2>
+            <p class="arrival">{{ slide.description }}</p>
+          </div>       
+   </div>
+    </swiper-slide>
+  </swiper>
+</v-col>
     </v-card>
   </v-row>
-   
-
 <!-- Mobile view -->
 <!-- Mobile view -->
 <div v-else>
       <swiper ref="swiperRef" :navigation="navigation" :modules="modules" class="mySwiper">
         <swiper-slide v-for="(slide, index) in slides" :key="index">
-          <div class="mobile-slide">
-            <v-img :src="slide.img" class="left-image"></v-img>
+          <div class="mobile-slide w-full">
+            <v-img :src="slide.img" class="left-image "></v-img>
             <div class="text-container">
               <h2 class="title five">{{ slide.title }}</h2>
               <p class="arrival">{{ slide.description }}</p>
@@ -41,22 +38,21 @@
         </swiper-slide>
       </swiper>
     </div>
-
-
     <!-- Pagination and navigation buttons -->
     <v-row :class="{ 'flex-row': isMobile, 'flex-row': !isMobile }">
-      <v-col cols="2">
-        <v-btn :disabled="currentPage === totalSlides - 1" variant="text" class="swiper-button-next">
+      
+      <v-col cols="1">
+        <v-btn :disabled="currentPage === totalSlides - 1" variant="text" class="swiper-button ">
           {{ (currentPage + 1).toString().padStart(2, '0') }} / {{ totalSlides.toString().padStart(2, '0') }}
         </v-btn>
       </v-col>
-      <v-col cols="2" >
-        <v-btn append-icon="mdi-chevron-right" variant="text" class="swiper-button-next ml-10" @click="nextSlide">
+      <v-col  cols="2">
+        <v-btn append-icon="mdi-chevron-right" variant="text" class="swiper-button-next ml-8" @click="nextSlide">
           next
         </v-btn>
       </v-col>
     </v-row>
-  </v-container>
+  </div>
 </template>
 
 <script>
@@ -124,13 +120,11 @@ export default {
 <style scoped>
 
 @media only screen and (min-width: 768px) {
-.slideRoom{
-  padding: 70px 0px 64px 0px; 
-}
+
 .five {
   position: absolute;
   top: 50%;
-  left: 25%;
+  left: 5%;
   width: 100%;
   height: auto;
   transform: translate(55%, -55%);
@@ -138,16 +132,18 @@ export default {
 
 .title {
   font-family: Merriweather;
-  font-size: 40px;
+  font-size: 4vw;
   font-weight: 400;
-  line-height: 60px;
-  letter-spacing: -0.6000000238418579px;
-  text-align: center;
-  color: rgba(160, 96, 86, 1);
-  width: 200px;
+  line-height: 6vh; 
+  text-align: left;
+  color: #2b7059;
+  width: 60%;
 }
 .arrival{
-  font-size: 18px;
+  position: absolute;
+  font-size: 1.8vw;
+  left: 61%;
+  top: 0%;
   white-space: normal;
   font-family: Varta;
   font-weight: 400;
@@ -155,28 +151,35 @@ export default {
   color: rgba(112, 100, 88, 0.9);
 }
 .description {
-  font-size: 18px;
+  font-size: 1.5vw;
   font-family: Varta;
   font-weight: 400;
-  line-height: 25px;
+  line-height: 3.5vh;
   text-align: left;
   color: rgba(112, 100, 88, 0.9);
-  width: 150px;
+  width: 100%;
 }
 
 .swiper-button-next {
- color: rgba(160, 96, 86, 1);
+ color: #2b7059;
  font-family: Karla;
-font-size: 20px;
+font-size: 1.8vw;
 font-weight: 700;
-line-height: 25px;
 letter-spacing: 0.30000001192092896px;
 text-align: left;
-padding-bottom: 20px;
-margin-right: 20px;
+padding-left: 70%;
+
 }
-
-
+.swiper-slide img{
+  width: 60%;
+  height: 100%;
+}
+.swiper-button{
+  color: rgb(170, 162, 160);
+ font-family: Karla;
+font-size: 1vw;
+margin-top: 20%;
+}
 }
 @media only screen and (max-width: 768px){
 

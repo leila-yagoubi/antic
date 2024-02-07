@@ -2,9 +2,11 @@
     
 
     <div class="inspiration">
-    
+   
     <newsletter/>
-    <Slider/>
+  
+         <Slider/>
+   
   
   </div>
 </template>
@@ -24,7 +26,7 @@ export default{
 
 @media only screen and (min-width: 768px){
     .inspiration{
-        padding: 70px 50px 64px 50px;
+        padding: 5% 0% 5% 8%;
     }
 }
 @media only screen and (max-width: 768px){}

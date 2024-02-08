@@ -44,12 +44,12 @@ color: rgb(88, 112, 106);
 
   .title{
   font-family: Merriweather;
-font-size: 35px;
+font-size: 5svb;
 font-weight: 300;
-line-height: 60px;
+
 letter-spacing: -0.6000000238418579px;
 text-align: left;
-color: rgba(112, 100, 88, 1);
+color: rgb(90, 112, 88);
 
 }
 }

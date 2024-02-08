@@ -80,7 +80,7 @@ export default {
 
 <style scoped>
 .navbar {
-  padding: 5% 8% 0vh 8%;
+  padding: 3% 0% 0% 6%;
   margin: 0;
 }
 
@@ -89,7 +89,7 @@ export default {
 .custom-title {
   font-family: Lexend;
   font-size: 4vw;
-  line-height: 8vh;
+  line-height: 12vh;
   font-weight: 700;
   text-align: left;
   color: #2b7059;
@@ -122,14 +122,6 @@ export default {
 .custom-drawer {
   color: beige;
   background-color: rgb(21, 116, 92);
-}
-
-@media only screen and (min-width:1450px) {
-  .navbar {
-    padding: 4vh 2vw 0px 2vw;
-    margin: 0;
-  }
-
 }
 </style>
 

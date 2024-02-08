@@ -2,17 +2,14 @@
   <div class="services">
    
       <v-col cols="12" md="12" xs="12" sm="12">
-
         <v-row>
-
           <!-- Left column -->
           <v-col cols="12" md="6">
             <v-card-title>
               <h3 class="title">We stay by your <br>side to design <br>your projects</h3>
             </v-card-title>
-          
               <v-btn
-        class="mt-4 "
+        class="mt-4 btn"
         variant="text"
       >
       <h6 class="title2">Find out more</h6>
@@ -22,11 +19,8 @@
           size="1.5vw"
           color="var(--Terracotta, #A06056)"
         ></v-icon>
-      </v-btn>
-              
-    
+      </v-btn>              
           </v-col>
-
           <!-- Right columns -->
           <v-col cols="12" md="3" sm="5">
             <v-card class="cards">
@@ -71,7 +65,6 @@
 <style scoped>
 .services {
   background: #F3EEE8;
-
 }
 .cards {
   background-color: #F3EEE8;
@@ -83,49 +76,40 @@
   .text {
     color: var(--Brown-Light, rgba(112, 100, 88, 0.90));
     font-family: Varta;
-    font-size: 18px;
+    font-size: 4vw;
     font-weight: 400;
-
     letter-spacing: 0px;
     text-align: left;
   }
 
   .title {
     font-family: Merriweather;
-    font-size: 35px;
+    font-size: 10vw;
     font-weight: 400;
-
     letter-spacing: -0.30000001192092896px;
     text-align: left;
-
     color: rgba(83, 75, 66, 1);
   }
 
   .title2 {
-    color: var(--Terracotta, #A06056);
+    color: var(--Terracotta, #2b7059);
     font-family: Lato;
-    font-size: 17px;
+    font-size: 3vw;
     font-weight: 900;
-    line-height: 25px;
     letter-spacing: 0.30000001192092896px;
     text-align: left;
-
-
+    
   }
-
+.btn{
+top:   -2%;
+}
   .subtitle {
-    height: 30px;
-
-    width: 311px;
-    height: 30px;
-    color: rgba(160, 96, 86, 1);
+    height: 4vh;
+    color: #2b7059;
     font-family: Varta;
     font-size: 25px;
     font-weight: 600;
-    line-height: 30px;
-    letter-spacing: -0.20000000298023224px;
     text-align: left;
-
   }
 
 }

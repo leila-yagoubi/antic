@@ -17,7 +17,7 @@
         </v-card-text>
 
         <v-col>
-          <v-btn class="button" icon="mdi-chevron-down " variant="outlined " size="3.2vw"></v-btn>
+          <v-btn class="button" icon="mdi-chevron-down " variant="outlined " size="8svb"></v-btn>
         </v-col>
 
       </div>
@@ -43,23 +43,25 @@ export default {
 
 @media only screen and (max-width: 768px) {
   .hero {
-  
-    background: linear-gradient(rgba(81, 156, 131, 0.089), rgb(17, 87, 62)),  url('@/assets/pic1.jpg') no-repeat center center ;
+
+    background: linear-gradient(rgba(81, 156, 131, 0.089), rgb(18, 75, 55)), url('@/assets/pic1.jpg') no-repeat center center;
 
     background-size: cover;
     padding: 30vh 5% 0% 5%;
     height: 100vh;
     width: 100%;
   }
+
   .card {
     padding: 0px 0px 0px 0px;
     gap: 28;
     display: flex;
     flex-direction: column;
   }
+
   .button {
-    color: #2b7059;
-    margin-left: 50%;
+    color: #ffffff;
+    margin-left: 45%;
     margin-bottom: 100px;
     width: 5vw;
     height: 5vw;

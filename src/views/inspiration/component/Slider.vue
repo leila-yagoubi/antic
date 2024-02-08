@@ -1,20 +1,14 @@
 <template>
-  <div  class="sliders">
+  <div class="sliders">
+
     <v-row>
       <v-col>
         <v-row v-if="!isMobile">
-          <swiper
-            ref="swiperRef"
-            :slides-per-view="3"
-            :space-between="30"
-            :navigation="navigation"
-            :modules="modules"
-            class="mySwiper"
-          >
+          <swiper ref="swiperRef" :slides-per-view="3" :navigation="navigation" :modules="modules" class="mySwiper">
             <swiper-slide v-for="(slide, index) in slides" :key="index">
-              <div>
-                <img :src="slide.img" alt="Slide Image" />
-              </div>
+
+              <img :src="slide.img" alt="Slide Image" />
+
             </swiper-slide>
           </swiper>
 
@@ -37,34 +31,16 @@
               <v-col md="2">
                 <v-col class="d-flex">
                   <v-col>
-                    <v-btn
-                      size="2vw"
-                      class="swiper-button swiper-button-prev"
-                      density="compact"
-                      icon="mdi-chevron-left "
-                      variant="outlined"
-                      color=" rgb(43, 112, 89)"
-                      @click="prevSlide"
-                    ></v-btn>
+                    <v-btn size="2vw" class="swiper-button swiper-button-prev" density="compact" icon="mdi-chevron-left "
+                      variant="outlined" color=" rgb(43, 112, 89)" @click="prevSlide"></v-btn>
                   </v-col>
                   <v-col>
-                    <v-btn
-                      size="2vw"
-                      class="swiper-button swiper-button-next"
-                      density="compact"
-                      icon="mdi-chevron-right  "
-                      variant="outlined"
-                      color=" rgb(43, 112, 89)"
-                      @click=" nextSlide"
-                    ></v-btn>
+                    <v-btn size="2vw" class="swiper-button swiper-button-next" density="compact"
+                      icon="mdi-chevron-right  " variant="outlined" color=" rgb(43, 112, 89)" @click="nextSlide"></v-btn>
                   </v-col>
                 </v-col>
 
-                <v-btn
-                  :disabled="currentPage === totalSlides - 1"
-                  variant="plain"
-                  class="swiper-button button"
-                >
+                <v-btn :disabled="currentPage === totalSlides - 1" variant="plain" class="swiper-button button">
                   {{ (currentPage + 1).toString().padStart(2, "0") }} /
                   {{ totalSlides.toString().padStart(2, "0") }}
                 </v-btn>
@@ -72,7 +48,6 @@
             </v-row>
           </v-col>
         </v-row>
-
         <v-row v-else>
           <!-- Layout for mobile devices -->
           <v-col md="12 " class="inspo">
@@ -90,32 +65,25 @@
     </v-row>
 
     <v-row v-if="isMobile">
-      <v-col class="d-flex flex-column justify-center">
+      <v-col class="d-flex flex-column justify-center mb-8">
         <!-- First Row -->
         <v-row>
-          <v-col
-            v-for="(slide, index) in slides.slice(0, 2)"
-            :key="index"
-            class="custom-grid-item"
-          >
-            <img :src="slide.img" alt="Grid Image" height="200" width="150" />
+          <v-col v-for="(slide, index) in slides.slice(0, 2)" :key="index" class="custom-grid-item">
+            <img :src="slide.img" alt="Grid Image" class="img" />
             <h3>Inspirations</h3>
           </v-col>
         </v-row>
 
         <!-- Second Row -->
-        <v-row>
-          <v-col
-            v-for="(slide, index) in slides.slice(2, 4)"
-            :key="index"
-            class="custom-grid-item"
-          >
-            <img :src="slide.img" alt="Grid Image" height="200" width="150" />
+        <v-row class="py-7">
+          <v-col v-for="(slide, index) in slides.slice(2, 4)" :key="index" class="custom-grid-item">
+            <img :src="slide.img" alt="Grid Image" class="img" />
             <h3>Inspirations</h3>
           </v-col>
         </v-row>
       </v-col>
     </v-row>
+
   </div>
 </template>
 
@@ -138,19 +106,19 @@ export default {
     const isMobile = computed(() => window.innerWidth < 600); // Adjust the breakpoint as needed
     const slides = [
       {
-        img: require("@/assets/1.png"),
+        img: require("@/assets/9.jpg"),
       },
       {
-        img: require("@/assets/2.png"),
+        img: require("@/assets/5.jpg"),
       },
       {
-        img: require("@/assets/3.jpg"),
+        img: require("@/assets/2.jpg"),
       },
       {
-        img: require("@/assets/1.png"),
+        img: require("@/assets/6.jpg"),
       },
       {
-        img: require("@/assets/2.png"),
+        img: require("@/assets/4.jpg"),
       },
     ];
 
@@ -196,32 +164,40 @@ export default {
 
 <style scoped>
 @media only screen and (min-width: 768px) {
+  .sliders {
+    padding: 3% 0% 0% 0%;
+    margin: 0;
+  }
+
   .swiper-button {
-    
     color: rgb(54, 97, 83);
     font-family: Karla;
     font-size: 1vw;
     font-weight: 700;
     letter-spacing: 0.30000001192092896px;
-    
+
   }
-  .swiper-button-next{
+
+  .swiper-button-next {
     margin-left: -70%;
   }
-.swiper-button-prev{
-  margin-left: -30%;
-}
-.button{
-  bottom: 15%;
-  margin-left: 10%;
-}
+
+  .swiper-button-prev {
+    margin-left: -30%;
+  }
+
+  .button {
+    bottom: 15%;
+    margin-left: 10%;
+  }
+
   .swiper {
+    margin-left: 1%;
     width: 100%;
     height: 100%;
   }
 
   .swiper-slide {
-    text-align: start;
     font-size: 1.2wv;
     background: #fff;
     justify-content: left;
@@ -230,20 +206,22 @@ export default {
   }
 
   .swiper-slide img {
-    width: 100%;
+    width: 85%;
     height: 80vh;
   }
+
   h3.title {
     font-family: Merriweather;
     font-size: 3vw;
     font-weight: 300;
     line-height: 40px;
-    letter-spacing: -0.30000001192092896px;
+
     text-align: left;
     color: rgb(25, 92, 70);
     margin-top: 2vh;
-    margin-left: -3%;
+
   }
+
   p.description {
     margin-top: 2vh;
     height: 100%;
@@ -257,6 +235,7 @@ export default {
     color: rgba(112, 100, 88, 1);
   }
 }
+
 @media only screen and (max-width: 768px) {
   h3.title2 {
     color: rgba(83, 75, 66, 1);
@@ -267,6 +246,7 @@ export default {
     letter-spacing: -0.30000001192092896px;
     text-align: left;
   }
+
   p.description2 {
     font-family: varta;
     font-size: 18px;
@@ -276,6 +256,12 @@ export default {
     text-align: left;
     padding-top: 20px;
     color: rgba(112, 100, 88, 1);
+  }
+
+
+  .img {
+    height: 100%;
+    width: 100%;
   }
 }
 </style>

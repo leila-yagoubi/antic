@@ -1,8 +1,9 @@
 <template>
   <div class="inspiration">
     <v-container fluid>
-    <newsletter />
-    <Slider /></v-container>
+      <newsletter />
+      <Slider />
+    </v-container>
   </div>
 </template>
 
@@ -20,7 +21,7 @@ export default {
 <style>
 @media only screen and (min-width: 768px) {
   .inspiration {
-    padding: 5% 0% 5% 8%;
+    padding: 4% 0% 4% 7%;
   }
 }
 

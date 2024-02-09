@@ -1,5 +1,5 @@
 <template>
-  <v-row>
+  <v-row class="newsletter">
     <v-col md="6">
       <h1 class="title1">Be aware of the latest trends</h1>
       <p class="title2">
@@ -49,6 +49,7 @@ export default {
 <style scoped>
 .newsletter {
   background-color: rgb(255, 255, 255);
+  padding: 0% 5% 0% 0%;
 }
 
 .custom-text-field {
@@ -61,6 +62,7 @@ export default {
   border: 0.2vw solid #E0E3EB;
   border-radius: 0vw;
   width: 35vw;
+  height: 9vh;
 
   @media only screen and (max-width: 600px) {
     border: 2px solid #E0E3EB;
@@ -80,15 +82,20 @@ export default {
 }
 
 .search {
+  font-size: 1.2vw;
+
+  @media only screen and (min-width: 1650px) {
+    padding-top: 1.5vh;
+  }
+
   @media only screen and (max-width: 600px) {
     font-size: 2svb;
   }
-
-
 }
 
 .btn {
-
+  width: 10vw;
+  font-size: 1.5vw;
   text-transform: none !important;
   border-radius: 0vw;
   background-color: #2b7059;
@@ -96,7 +103,7 @@ export default {
   font-weight: 600;
   text-align: center;
   color: #FFFFFF;
-  padding: 1.5vw 0.5vw 2.8vw 1vw;
+  padding: 3svb 0.5svb 5.5svb 1svb;
 
   @media only screen and (max-width: 600px) {
 
@@ -112,7 +119,6 @@ export default {
     font-family: Merriweather;
     font-size: 6svb;
     font-weight: 300;
-
     text-align: left;
     color: rgba(18, 18, 18, 1);
   }

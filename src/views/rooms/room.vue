@@ -1,11 +1,12 @@
 <template>
     <div class="room">
-      <v-container>
-      
-        <h2 class="title ">Find your room</h2>
+   <v-col>
+     <h2 class="title ">Find your room</h2>
       
        <Slide/> 
-      </v-container>
+   </v-col>
+       
+    
      
     </div>
 </template>
@@ -28,7 +29,7 @@ components:{
 }
 @media only screen and (min-width: 768px) {
   .room{
-    padding: 4% 6% 3% 6%; 
+    padding: 4% 7% 4% 7%;
   }
 .title{
 

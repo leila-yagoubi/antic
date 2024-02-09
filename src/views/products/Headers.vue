@@ -19,24 +19,23 @@
 
           <!-- Logo and title -->
 
-          <v-toolbar-title class="custom-title d-flex ">
+
+
+          <h1 class="custom-title d-flex ">
             antic
-          </v-toolbar-title>
+
+          </h1>
+          <v-tabs v-model="tab" v-for="(item, index) in items" :key="index" class="tabs d-none d-sm-flex">
+            <h5 class="custom-tabs ">{{ item.text }}</h5>
+          </v-tabs>
+
 
 
           <v-spacer />
           <v-app-bar-nav-icon @click="drawer = !drawer" class="d-sm-none drawer"></v-app-bar-nav-icon>
 
-          <v-tabs v-model="tab" class=" d-none d-sm-flex">
-            <v-menu v-for="(item, index) in items" :key="index" transition="slide-x-transition" class="d-none d-sm-block">
-              <template v-slot:activator="{ props }">
-                <v-btn class="custom-tabs " v-bind="props">{{ item.text }}</v-btn>
-              </template>
-              <!-- Add content for the menu if needed -->
 
-            </v-menu>
-          </v-tabs>
-          <v-spacer />
+
           <v-btn class=" d-none d-sm-block   " @click="contactUs">
             <v-avatar> <v-img src="@/assets/Union.png" alt="" /> </v-avatar>
           </v-btn>
@@ -58,11 +57,14 @@ export default {
       drawer: false,
       tab: null,
       items: [
-        { text: "About Us", },
-        { text: "Article", },
+        { text: "Products" },
+        { text: "Rooms" },
         {
-          text: "Property",
+          text: "Services"
         },
+        {
+          text: "Inspirations"
+        }
       ],
     };
   },
@@ -80,11 +82,14 @@ export default {
 
 <style scoped>
 .navbar {
-  padding: 3% 0% 0% 6%;
+  padding: 3% 0% 0% 8%;
   margin: 0;
 }
 
 
+.tabs {
+  margin-top: 3.5svb;
+}
 
 .custom-title {
   font-family: Lexend;
@@ -93,6 +98,7 @@ export default {
   font-weight: 700;
   text-align: left;
   color: #2b7059;
+  margin-right: 2%;
 
   @media only screen and (max-width: 600px) {
     font-size: 7svb;
@@ -109,9 +115,8 @@ export default {
   font-size: 1.2vw;
   font-weight: 300;
   text-align: left;
-  color: #386e4f;
-
-
+  color: #547a53;
+ 
 }
 
 .drawer {

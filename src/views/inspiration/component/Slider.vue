@@ -4,7 +4,8 @@
     <v-row>
       <v-col>
         <v-row v-if="!isMobile">
-          <swiper ref="swiperRef" :slides-per-view="3" :navigation="navigation" :modules="modules" class="mySwiper">
+          <swiper ref="swiperRef" :slides-per-view="3" :navigation="navigation" :space-between="50" :modules="modules"
+            class="mySwiper">
             <swiper-slide v-for="(slide, index) in slides" :key="index">
 
               <img :src="slide.img" alt="Slide Image" />
@@ -206,7 +207,7 @@ export default {
   }
 
   .swiper-slide img {
-    width: 85%;
+    width: 100%;
     height: 80vh;
   }
 

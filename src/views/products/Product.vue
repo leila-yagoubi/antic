@@ -6,15 +6,14 @@
 
       <!-- Colored background div -->
       <div class="custumetitle">
-        <v-card-title>
-          <h2 class="title1  ">HOME DESIGN</h2>
-        </v-card-title>
-        <v-card-title>
-          <h3 class="title2 ">Elegance for <br> Interiors & <br> Exteriors</h3>
-        </v-card-title>
-        <v-card-text>
-          <h1 class="title3 ">We provide everyone with modern, trendy, quality furniture</h1>
-        </v-card-text>
+
+        <h2 class="title1  ">HOME DESIGN</h2>
+
+
+        <h3 class="title2 ">Elegance for <br> Interiors & <br> Exteriors</h3>
+
+        <h1 class="title3 ">We provide everyone with modern, trendy, quality furniture</h1>
+
 
         <v-col>
           <v-btn class="button" icon="mdi-chevron-down " variant="outlined " size="8svb"></v-btn>
@@ -41,11 +40,10 @@ export default {
   width: 100%;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 600px) {
   .hero {
 
     background: linear-gradient(rgba(81, 156, 131, 0.089), rgb(18, 75, 55)), url('@/assets/pic1.jpg') no-repeat center center;
-
     background-size: cover;
     padding: 30vh 5% 0% 5%;
     height: 100vh;
@@ -103,7 +101,7 @@ export default {
 @media only screen and (min-width: 768px) {
   .hero {
     height: 100vh;
-    padding: 0% 0% 0% 5%;
+    padding: 4% 7% 4% 7%;
   }
 
   .custumetitle {
@@ -112,40 +110,37 @@ export default {
 
   h2.title1 {
     width: 420px;
-    font-size: 2vw;
+    font-size: 1.6vw;
     margin-bottom: 20px;
     color: rgb(43, 112, 89);
     font-family: Varta;
     font-weight: 700;
-
-
   }
 
   h3.title2 {
     font-family: Merriweather;
-    font-size: 6vw;
+    font-size: 3.5vw;
     font-weight: 300;
-    line-height: 13vh;
-    letter-spacing: -0.4000000059604645px;
+    line-height: 11vh;
     text-align: left;
     color: #2b7059;
   }
 
   h1.title3 {
-    width: 65%;
+    width: 55%;
     color: #706458E5;
     font-family: Varta;
-    font-size: 1.8vw;
+    font-size: 1.5vw;
     font-weight: 300;
     line-height: 3.8vh;
     letter-spacing: 0px;
     text-align: left;
+    margin-top: 2%;
   }
 
   .button {
+    margin-top: 5%;
     color: #195a44;
-    margin-left: 1.5%;
-
   }
 }
 </style>

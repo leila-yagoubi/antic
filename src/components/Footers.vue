@@ -79,8 +79,6 @@ export default {
   padding: 4% 5% 4% 8%;
 }
 
-
-
 .title {
   font-family: Merriweather;
   font-size: 7svb;
@@ -91,7 +89,6 @@ export default {
 
 .column {
   font-family: Varta;
- 
   font-size: 4svb;
   font-weight: 800;
   line-height: 8vh;
@@ -103,7 +100,6 @@ export default {
     line-height: 3vh;
   }
 }
-
 
 .btn {
   font-family: Karla;
@@ -130,7 +126,6 @@ export default {
   font-size: 2.5vb;
   @media only screen  and (min-width: 600px) and (max-width: 768px ){
     font-size:1.5vw;
-
     line-height: 1vh;
   }
 }

@@ -39,8 +39,7 @@ export default {
   height: 100%;
   width: 100%;
 }
-
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .hero {
 
     background: linear-gradient(rgba(81, 156, 131, 0.089), rgb(18, 75, 55)), url('@/assets/pic1.jpg') no-repeat center center;
@@ -48,6 +47,7 @@ export default {
     padding: 30vh 5% 0% 5%;
     height: 100vh;
     width: 100%;
+    
   }
 
   .card {

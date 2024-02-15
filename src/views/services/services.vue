@@ -1,30 +1,25 @@
 <template>
   <div class="services">
-    <v-col cols="12" md="12" xs="12" sm="12">
+    <v-col cols="12" md="12" sm="12">
       <v-row>
         <!-- Left column -->
-        <v-col cols="12" md="6">
+        <v-col cols="12" md="6" sm="5">
           <h3 class="title">
             We stay by your <br />side to design <br />your projects
           </h3>
           <v-btn class="mt-4 btn" variant="text">
             <h6 class="title2">Find out more</h6>
-            <v-icon
-              end
-              icon="mdi-chevron-right"
-              size="1.5vw"
-              color="var(--Terracotta, #A06056)"
-            ></v-icon>
+            <v-icon end icon="mdi-chevron-right" size="1.5vw" color="var(--Terracotta, #A06056)"></v-icon>
           </v-btn>
         </v-col>
         <!-- Right columns -->
-        <v-col cols="12" md="3" sm="5">
+        <v-col cols="12" md="3" sm="3">
           <v-card class="cards">
             <v-card-text>
               <h3 class="subtitle">Our Advices</h3>
               <p class="text">
                 What if you took advantage of this rather special period to
-                rethink your interior? You spend more time at home so you might
+                rethink your interior? You spend more time a home so you might
                 as well feel good there.
               </p>
             </v-card-text>
@@ -41,7 +36,7 @@
           </v-card>
         </v-col>
 
-        <v-col cols="12" md="3" sm="5">
+        <v-col cols="12" md="3" sm="3">
           <v-card class="cards">
             <v-card-text>
               <h3 class="subtitle">Click and Collect</h3>
@@ -71,12 +66,13 @@
 .services {
   background: #f3eee8;
 }
+
 .cards {
   background-color: #f3eee8;
   box-shadow: none;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 600px) {
   .text {
     color: var(--Brown-Light, rgba(112, 100, 88, 0.9));
     font-family: Varta;
@@ -103,9 +99,11 @@
     letter-spacing: 0.30000001192092896px;
     text-align: left;
   }
+
   .btn {
     top: -2%;
   }
+
   .subtitle {
     height: 4vh;
     color: #2b7059;
@@ -113,6 +111,30 @@
     font-size: 25px;
     font-weight: 600;
     text-align: left;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  h3.title {
+    color: rgba(112, 100, 88, 1);
+    font-family: Merriweather;
+    font-size: 4vw;
+    font-weight: 300;
+    line-height: 9vh;
+    letter-spacing: -0.6000000238418579px;
+    text-align: left;
+  }
+
+  .title2 {
+    color: var(--Terracotta, #2b7059);
+    font-size: 1vw;
+    letter-spacing: 0.3px;
+  }
+
+  .cards {
+    display: flex;
+    font-family: Karla;
+    height: 54%;
   }
 }
 
@@ -160,11 +182,14 @@
     text-align: left;
     width: 100%;
     height: 100%;
+
   }
-.btn{
-  padding: 0%;
-  margin: 0%;
-}
+
+  .btn {
+    padding: 0%;
+    margin: 0%;
+  }
+
   .title {
     font-family: Merriweather;
     font-size: 55px;
